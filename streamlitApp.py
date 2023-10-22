@@ -154,7 +154,9 @@ if input_method == "File Uploader":
     )
     if uploaded_file is not None:
         uploaded_file_img = load_uploaded_image(uploaded_file)
-        st.image(uploaded_file_img, caption="Uploaded Image", width=300)
+        col1, col2, col3 = st.columns(3)
+        col2.image(uploaded_file_img, caption="Uploaded Image", width=300)
+        # st.image(uploaded_file_img, caption="Uploaded Image", width=300)
         st.success("Image uploaded successfully!")
     else:
         st.warning("Please upload an image file.")
